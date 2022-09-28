@@ -13,3 +13,9 @@ jobs:
       - run:
           name: Run Tests
           command: npm run test -- --coverage --watchAll=false || exit 1
+
+
+workflows:
+  aws_deploy:
+    jobs:
+      - test
