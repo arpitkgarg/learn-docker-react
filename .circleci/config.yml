@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:16.13.0
+    steps:
+      - checkout
+      # install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm clean-install
+      - run:
+          name: Run Tests
+          command: npm run test -- --coverage --watchAll=false || exit 1
