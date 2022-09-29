@@ -12,7 +12,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Install Dependencies
-          command: docker build -t arpitgarg/learn-react-docker
+          command: docker build -t arpitgarg/learn-react-docker ./frontend
 
 workflows:
   aws_deploy:
