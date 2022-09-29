@@ -11,10 +11,6 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true
       - run:
-          name: Install Dependencies
-          command: docker build -t arpitgarg/learn-react-docker ./frontend
-
-      - run:
           name: Installing deployment dependencies
           working_directory: /
           command: |
