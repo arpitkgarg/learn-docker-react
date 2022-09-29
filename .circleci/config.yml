@@ -1,0 +1,20 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/go:1.17
+    steps:
+      - checkout
+      # install dependencies
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+      - run:
+          name: Install Dependencies
+          command: docker build -t arpitgarg/learn-react-docker
+
+workflows:
+  aws_deploy:
+    jobs:
+      - test
