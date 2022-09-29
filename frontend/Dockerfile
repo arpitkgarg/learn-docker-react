@@ -2,10 +2,10 @@ FROM node:18-alpine as builder
 
 WORKDIR /usr/app/frontend
 
-COPY ./frontend/package.json /usr/app/frontend
+COPY package.json /usr/app/frontend
 RUN npm install
 
-COPY ./frontend /usr/app/frontend
+COPY ./ /usr/app/frontend
 
 RUN npm run build
 
