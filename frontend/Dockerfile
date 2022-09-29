@@ -1,11 +1,11 @@
-#FROM node:18-alpine as builder
+FROM node:18-alpine as builder
 
 WORKDIR /usr/app/frontend
 
-COPY package.json /usr/app/frontend
+COPY ./frontend/package.json /usr/app/frontend
 RUN npm install
 
-COPY ./ /usr/app/frontend
+COPY ./frontend /usr/app/frontend
 
 RUN npm run build
 
