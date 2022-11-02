@@ -1,1 +1,1 @@
-# learn-docker-react
+# Repository to learn React with docker
